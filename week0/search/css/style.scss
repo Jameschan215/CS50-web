@@ -1,0 +1,161 @@
+// Variables
+$dark-font: #222;
+$dark-font-hover: #393939;
+$border-color: rgba($color: #000, $alpha: .2);
+$shadow: rgba($color: #000, $alpha: .1);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: $dark-font;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        border-bottom: 1px solid $border-color;
+
+        ul {
+            padding: 20px;
+            width: 100%;
+            list-style-type: none;
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        li > a {
+            text-decoration: none;
+            color: $dark-font;
+
+            &:hover {
+                text-decoration: underline;
+                color: $dark-font-hover;
+            }
+        }
+    }
+}
+
+.main {
+    // background-color: orangered;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    h1, p {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .common-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+
+        input[type="text"] {
+            width: 600px;
+            padding: 15px 25px;
+            border-radius: 50px;
+            border: 1px solid $border-color;
+            font-size: 16px;
+
+            &:focus,
+            &:hover {
+                border: 1px solid #ddd;
+                box-shadow: 1px 1px 5px 2px $shadow;
+                outline: none;
+            }
+        }
+
+        input[type="submit"] {
+            padding: 10px 15px;
+            // I don't know why, but it makes the buttons put when hovering over them
+            border: 1px solid transparent;  
+            border-radius: 5px;
+            background-color: transparent;
+            color: $dark-font;
+            margin: 0 15px;
+            font-size: 16px;
+
+            &:hover {
+                border: 1px solid #ddd;
+                box-shadow: 1px 1px 5px 2px $shadow;
+                outline: none;
+            }
+        }
+    }
+
+    .advanced-form {
+        max-width: 600px;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+
+        label {
+            flex: 1 0 200px;
+            margin: 20px 0;
+        }
+
+        input {
+            flex: 1 1 390px;
+            padding: 10px;
+            border-radius: 0;
+            border: 1px solid $border-color;
+
+            &:focus {
+                outline: 1px solid #4d90fe;
+            }
+        }
+
+        .btn {
+            background-color: #4d90fe;
+            color: white;
+            border: 1px solid #3079ed;
+            border-radius: 3px;
+            flex: 0 0 auto;
+            margin: 20px 0;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #3079ed;
+            }
+        }
+
+
+    }
+}
+
+.footer {
+    height: 200px;
+}
+
